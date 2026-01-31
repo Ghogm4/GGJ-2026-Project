@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dc6r6rjkns41h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_al0dc"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_al0dc"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[node name="DialogueBox" type="Control" unique_id=1301942338]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1274791863]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 500
+theme_override_constants/margin_top = 700
+theme_override_constants/margin_right = 500
+theme_override_constants/margin_bottom = 50
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1177489460]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_al0dc")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel" unique_id=553092832]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer" unique_id=999890870]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "操"
+label_settings = SubResource("LabelSettings_al0dc")
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/Panel" unique_id=2081854588]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 100
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer2" unique_id=2037291650]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "操你妈"

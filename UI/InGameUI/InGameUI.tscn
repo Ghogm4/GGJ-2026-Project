@@ -1,3 +1,476 @@
 [gd_scene format=3 uid="uid://lhrrgxmf7wg7"]
 
+[ext_resource type="Texture2D" uid="uid://dre148qh7foi" path="res://Assets/UI/InGameUI/InGameUIBG.png" id="1_mogel"]
+[ext_resource type="Texture2D" uid="uid://bne7waf6p4r0j" path="res://Assets/UI/InGameUI/NPCDisplayBG.png" id="1_rf2qb"]
+[ext_resource type="Texture2D" uid="uid://ms60b5lgwej3" path="res://Assets/UI/InGameUI/BG1.png" id="3_7hqhk"]
+[ext_resource type="Texture2D" uid="uid://bo83icvw72yig" path="res://Assets/NPC/MiddleAgedWoman1.png" id="3_ca3su"]
+[ext_resource type="Texture2D" uid="uid://cuyurnhrveeu8" path="res://Assets/UI/InGameUI/DialogueHistoryBG.png" id="3_hpjip"]
+[ext_resource type="Texture2D" uid="uid://hbqh7lfpsj8" path="res://Assets/UI/InGameUI/PatienceHeart.png" id="4_afdwc"]
+[ext_resource type="Texture2D" uid="uid://b0fiqa7xp3eta" path="res://Assets/UI/InGameUI/ProgressBarBGVertical.png" id="4_knnpo"]
+[ext_resource type="Texture2D" uid="uid://g0mjj2mptaop" path="res://Assets/UI/InGameUI/SendButton.png" id="4_v48jm"]
+[ext_resource type="Texture2D" uid="uid://n6tx8luh4yb5" path="res://Assets/Mask/RabbitMask.png" id="4_ygop3"]
+[ext_resource type="Texture2D" uid="uid://do1ryqic4t5mi" path="res://Assets/UI/InGameUI/MoreButton.png" id="6_2cs6o"]
+[ext_resource type="Script" uid="uid://bb2ther7p7tea" path="res://UI/InGameUI/MaskButton.cs" id="6_q1b6k"]
+[ext_resource type="Theme" uid="uid://c8ah2mfakt2b2" path="res://UI/InGameUI/MaskAndItem/MaskAndItemButtonTheme.tres" id="6_sk1xu"]
+[ext_resource type="Script" uid="uid://dlswx7yfwfhgt" path="res://UI/InGameUI/MoreButton.cs" id="7_7h060"]
+[ext_resource type="Script" uid="uid://db0wk0be006rr" path="res://UI/InGameUI/ItemButton.cs" id="7_sk1xu"]
+[ext_resource type="PackedScene" uid="uid://bcbtyli4psq28" path="res://UI/InGameUI/DialogueBox/DialogueHistoryMessageBox.tscn" id="7_tjskt"]
+[ext_resource type="Texture2D" uid="uid://dj4toamjej146" path="res://Assets/UI/InGameUI/PersonaBookButton.png" id="8_rbjxt"]
+[ext_resource type="Script" uid="uid://cvlqefwfsedoc" path="res://UI/InGameUI/DialogueBox/SendButton.cs" id="8_tjskt"]
+[ext_resource type="Script" uid="uid://cu5wo1bvgvwa4" path="res://UI/InGameUI/PersonaBookButton.cs" id="8_uxdl3"]
+[ext_resource type="Script" uid="uid://b3vr6o6mv7bf5" path="res://UI/InGameUI/ShopButton.cs" id="9_46ymx"]
+[ext_resource type="Texture2D" uid="uid://jhjffaxhrg37" path="res://Assets/UI/InGameUI/ShopButton.png" id="10_fvl40"]
+[ext_resource type="Texture2D" uid="uid://b22dyexsvdnec" path="res://Assets/UI/InGameUI/Coin.png" id="21_1fx02"]
+[ext_resource type="Texture2D" uid="uid://270qisvx6ogh" path="res://Assets/UI/InGameUI/Heart.png" id="22_naom4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_afdwc"]
+corner_radius_top_left = 66
+corner_radius_top_right = 66
+corner_radius_bottom_right = 66
+corner_radius_bottom_left = 66
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f1t8x"]
+texture = ExtResource("4_knnpo")
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jv1o7"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.17, 0.17, 0.17, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v48jm"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.8784314, 0.8784314, 0.8784314, 1)
+border_width_top = 5
+border_color = Color(0.49, 0.49, 0.49, 1)
+corner_radius_bottom_right = 36
+corner_radius_bottom_left = 33
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hpjip"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v48jm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_naom4"]
+texture = ExtResource("4_v48jm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_du8sr"]
+texture = ExtResource("4_v48jm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hrju0"]
+texture = ExtResource("4_v48jm")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1t8x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jv1o7"]
+texture = ExtResource("4_v48jm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uxdl3"]
+texture = ExtResource("6_2cs6o")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_46ymx"]
+texture = ExtResource("6_2cs6o")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rbjxt"]
+texture = ExtResource("6_2cs6o")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fvl40"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q1b6k"]
+texture = ExtResource("6_2cs6o")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sk1xu"]
+texture = ExtResource("8_rbjxt")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ca3su"]
+texture = ExtResource("8_rbjxt")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ygop3"]
+texture = ExtResource("8_rbjxt")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7hqhk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tjskt"]
+texture = ExtResource("8_rbjxt")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afdwc"]
+texture = ExtResource("10_fvl40")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_knnpo"]
+texture = ExtResource("10_fvl40")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_376e2"]
+texture = ExtResource("10_fvl40")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1fx02"]
+texture = ExtResource("10_fvl40")
+
 [node name="InGameUI" type="CanvasLayer" unique_id=1651280518]
+
+[node name="Control" type="Control" parent="." unique_id=1931556822]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="TextureRect" parent="Control" unique_id=2110504325]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mogel")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="NPCDisplay" type="MarginContainer" parent="Control" unique_id=605052923]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 900
+theme_override_constants/margin_bottom = 100
+
+[node name="NPCDisplayBGTexture" type="TextureRect" parent="Control/NPCDisplay" unique_id=613386210]
+layout_mode = 2
+texture = ExtResource("1_rf2qb")
+expand_mode = 1
+
+[node name="StreetBG" type="MarginContainer" parent="Control/NPCDisplay" unique_id=119791854]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Mask" type="Panel" parent="Control/NPCDisplay/StreetBG" unique_id=1051875015]
+clip_children = 1
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_afdwc")
+
+[node name="TextureRect" type="TextureRect" parent="Control/NPCDisplay/StreetBG/Mask" unique_id=2021827028]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_7hqhk")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="PatienceBar" type="MarginContainer" parent="Control/NPCDisplay" unique_id=436314239]
+layout_mode = 2
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/NPCDisplay/PatienceBar" unique_id=984987042]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 23
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/NPCDisplay/PatienceBar/VBoxContainer" unique_id=1978767815]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_styles/background = SubResource("StyleBoxTexture_f1t8x")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jv1o7")
+value = 100.0
+fill_mode = 3
+show_percentage = false
+
+[node name="TextureRect" type="TextureRect" parent="Control/NPCDisplay/PatienceBar/VBoxContainer/ProgressBar" unique_id=1742207934]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_knnpo")
+expand_mode = 1
+
+[node name="PatienceHeartTexture" type="TextureRect" parent="Control/NPCDisplay/PatienceBar/VBoxContainer" unique_id=79348371]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+texture = ExtResource("4_afdwc")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/NPCDisplay" unique_id=29093936]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/margin_bottom = 26
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/NPCDisplay/MarginContainer2" unique_id=1654662939]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/margin_bottom = -200
+
+[node name="NPCTexture" type="TextureRect" parent="Control/NPCDisplay/MarginContainer2/MarginContainer" unique_id=1751125529]
+layout_mode = 2
+texture = ExtResource("3_ca3su")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MaskTexture" type="TextureRect" parent="Control/NPCDisplay/MarginContainer2/MarginContainer" unique_id=148566634]
+layout_mode = 2
+texture = ExtResource("4_ygop3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DialogueHistory" type="MarginContainer" parent="Control" unique_id=843378072]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1100
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 250
+
+[node name="DialogueHistoryBGTexture" type="TextureRect" parent="Control/DialogueHistory" unique_id=551485013]
+layout_mode = 2
+texture = ExtResource("3_hpjip")
+expand_mode = 1
+
+[node name="DialogueHistoryContainer" type="MarginContainer" parent="Control/DialogueHistory" unique_id=756762276]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 158
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/DialogueHistory/DialogueHistoryContainer" unique_id=1931976117]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/DialogueHistory/DialogueHistoryContainer/ScrollContainer" unique_id=477706846]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_right = 30
+
+[node name="DialogueHistoryMessages" type="VBoxContainer" parent="Control/DialogueHistory/DialogueHistoryContainer/ScrollContainer/MarginContainer" unique_id=1077708710]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 60
+
+[node name="Control" type="Control" parent="Control/DialogueHistory/DialogueHistoryContainer/ScrollContainer/MarginContainer/DialogueHistoryMessages" unique_id=105540398]
+layout_mode = 2
+
+[node name="DialogueHistoryMessageBox" parent="Control/DialogueHistory/DialogueHistoryContainer/ScrollContainer/MarginContainer/DialogueHistoryMessages" unique_id=2036113476 instance=ExtResource("7_tjskt")]
+layout_mode = 2
+
+[node name="DialogueHistoryMessageBox2" parent="Control/DialogueHistory/DialogueHistoryContainer/ScrollContainer/MarginContainer/DialogueHistoryMessages" unique_id=1321361794 instance=ExtResource("7_tjskt")]
+layout_mode = 2
+AlignLeft = true
+
+[node name="DialogueHistoryMessageBox3" parent="Control/DialogueHistory/DialogueHistoryContainer/ScrollContainer/MarginContainer/DialogueHistoryMessages" unique_id=33666027 instance=ExtResource("7_tjskt")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/DialogueHistory" unique_id=1139726927]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 33
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 18
+
+[node name="SendPanel" type="Panel" parent="Control/DialogueHistory/MarginContainer" unique_id=1634305013]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v48jm")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/DialogueHistory/MarginContainer/SendPanel" unique_id=533014742]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 20
+
+[node name="TextEdit" type="TextEdit" parent="Control/DialogueHistory/MarginContainer/SendPanel/MarginContainer" unique_id=1555859385]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/caret_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hpjip")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v48jm")
+text = "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
+wrap_mode = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/DialogueHistory/MarginContainer/SendPanel" unique_id=1921864572]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_right = 8
+
+[node name="SendButton" type="Button" parent="Control/DialogueHistory/MarginContainer/SendPanel/MarginContainer2" unique_id=974462742]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_naom4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_du8sr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hrju0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_f1t8x")
+theme_override_styles/focus = SubResource("StyleBoxTexture_jv1o7")
+script = ExtResource("8_tjskt")
+
+[node name="MaskAndItem" type="MarginContainer" parent="Control" unique_id=596882693]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 1100
+theme_override_constants/margin_top = 900
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MaskAndItem" unique_id=509496244]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 50
+
+[node name="MaskButton" type="Button" parent="Control/MaskAndItem/HBoxContainer" unique_id=1508991557]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("6_sk1xu")
+text = "面具"
+script = ExtResource("6_q1b6k")
+metadata/_custom_type_script = "uid://bv2nc16ay1h8r"
+
+[node name="ItemButton" type="Button" parent="Control/MaskAndItem/HBoxContainer" unique_id=38435225]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("6_sk1xu")
+text = "道具"
+script = ExtResource("7_sk1xu")
+metadata/_custom_type_script = "uid://bv2nc16ay1h8r"
+
+[node name="TopButtons" type="MarginContainer" parent="Control" unique_id=1002857924]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/TopButtons" unique_id=700763628]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 54
+
+[node name="MoreButton" type="Button" parent="Control/TopButtons/HBoxContainer" unique_id=1712970072]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_uxdl3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_46ymx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rbjxt")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fvl40")
+theme_override_styles/focus = SubResource("StyleBoxTexture_q1b6k")
+script = ExtResource("7_7h060")
+
+[node name="PersonaBookButton" type="Button" parent="Control/TopButtons/HBoxContainer" unique_id=1023169377]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_sk1xu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ca3su")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ygop3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7hqhk")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tjskt")
+script = ExtResource("8_uxdl3")
+
+[node name="ShopButton" type="Button" parent="Control/TopButtons/HBoxContainer" unique_id=663748251]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_afdwc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_knnpo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_376e2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1fx02")
+script = ExtResource("9_46ymx")
+
+[node name="Stats" type="MarginContainer" parent="Control" unique_id=1485772208]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 200
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Stats" unique_id=1240156128]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/separation = 100
+
+[node name="Coin" type="TextureRect" parent="Control/Stats/HBoxContainer" unique_id=2049137974]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("21_1fx02")
+
+[node name="Health" type="TextureRect" parent="Control/Stats/HBoxContainer" unique_id=2125605545]
+custom_minimum_size = Vector2(76, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture = ExtResource("22_naom4")
+stretch_mode = 1
+
+[editable path="Control/DialogueHistory/DialogueHistoryContainer/ScrollContainer/MarginContainer/DialogueHistoryMessages/DialogueHistoryMessageBox2"]

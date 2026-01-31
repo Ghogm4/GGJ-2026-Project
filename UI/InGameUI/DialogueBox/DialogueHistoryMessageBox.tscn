@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bcbtyli4psq28"]
+
+[ext_resource type="Script" uid="uid://b7m2nuwyyssgh" path="res://UI/InGameUI/DialogueBox/DialogueHistoryMessageBox.cs" id="1_xtu6h"]
+[ext_resource type="LabelSettings" uid="uid://cs7p5ru07ffxm" path="res://UI/InGameUI/DialogueBox/DialogueHistoryMessageLabelSettings.tres" id="2_g1re7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtu6h"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.8784314, 0.8784314, 0.8784314, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.49019608, 0.49019608, 0.49019608, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_rtkg0"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[node name="DialogueHistoryMessageBox" type="Control" unique_id=2036113476]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_xtu6h")
+
+[node name="DummyLabel" type="Label" parent="." unique_id=339231646]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -14.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操a操"
+label_settings = ExtResource("2_g1re7")
+horizontal_alignment = 2
+autowrap_mode = 3
+
+[node name="Panel" type="Panel" parent="DummyLabel" unique_id=144743540]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xtu6h")
+
+[node name="MarginContainer" type="MarginContainer" parent="DummyLabel/Panel" unique_id=763567793]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="DisplayLabel" type="Label" parent="DummyLabel/Panel/MarginContainer" unique_id=1006852537]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+text = "aa"
+label_settings = SubResource("LabelSettings_rtkg0")
+vertical_alignment = 1
+autowrap_mode = 3

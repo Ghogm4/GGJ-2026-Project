@@ -44,6 +44,7 @@ public partial class Customer : Resource
     private string _story = "";
     private int _triggeredTraitsBitMask = 0;
     private int _triggeredTraits = 0;
+    private Texture2D _portrait = null;
     private Customer() { }
     public static async Task<Customer> New()
     {

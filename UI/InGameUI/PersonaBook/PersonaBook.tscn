@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://c0googbqlilwr"]
+
+[ext_resource type="LabelSettings" uid="uid://o5w240jnlqfq" path="res://UI/InGameUI/PersonaBook/PersonaBookLabelSettings.tres" id="1_et623"]
+[ext_resource type="Theme" uid="uid://dvp7jvuergufq" path="res://UI/InGameUI/PersonaBook/PersonaBookContentTheme.tres" id="2_dhqq6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sprit"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0.47058824)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="PersonaBook" type="Control" unique_id=699838980]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DarkBG" type="Panel" parent="." unique_id=753415845]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sprit")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=152380815]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=333823705]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "人格本"
+label_settings = ExtResource("1_et623")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=1497933504]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_dhqq6")
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 109
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer" unique_id=320156201]
+layout_mode = 2
+
+[node name="Personas" type="GridContainer" parent="MarginContainer/MarginContainer/HBoxContainer" unique_id=1527753615]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 237
+theme_override_constants/v_separation = 117
+columns = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=1426005695]
+layout_mode = 2
+text = "谈判家"
+label_settings = ExtResource("1_et623")
+
+[node name="Label2" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=643912139]
+layout_mode = 2
+text = "投机者"
+label_settings = ExtResource("1_et623")
+
+[node name="Label3" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=222527462]
+layout_mode = 2
+text = "独行客"
+label_settings = ExtResource("1_et623")
+
+[node name="Label4" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=89469428]
+layout_mode = 2
+text = "操控者"
+label_settings = ExtResource("1_et623")
+
+[node name="Label5" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=1255191846]
+layout_mode = 2
+text = "守序者"
+label_settings = ExtResource("1_et623")
+
+[node name="Label6" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=1049183641]
+layout_mode = 2
+text = "内耗者"
+label_settings = ExtResource("1_et623")
+
+[node name="Label7" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=654673916]
+layout_mode = 2
+text = "共鸣者"
+label_settings = ExtResource("1_et623")
+
+[node name="Label8" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=1914031774]
+layout_mode = 2
+text = "执法者"
+label_settings = ExtResource("1_et623")
+
+[node name="Traits" type="VBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer" unique_id=1285857866]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/MarginContainer/HBoxContainer/Traits" unique_id=881289476]
+layout_mode = 2
+text = "利益导向"
+
+[node name="CheckBox2" type="CheckBox" parent="MarginContainer/MarginContainer/HBoxContainer/Traits" unique_id=681383502]
+layout_mode = 2
+text = "规则意识"
+
+[node name="CheckBox3" type="CheckBox" parent="MarginContainer/MarginContainer/HBoxContainer/Traits" unique_id=672022385]
+layout_mode = 2
+text = "共情表达"
+
+[node name="CheckBox4" type="CheckBox" parent="MarginContainer/MarginContainer/HBoxContainer/Traits" unique_id=374925309]
+layout_mode = 2
+text = "矛盾言行"
+
+[node name="CheckBox5" type="CheckBox" parent="MarginContainer/MarginContainer/HBoxContainer/Traits" unique_id=844737721]
+layout_mode = 2
+text = "排斥合作"
+
+[node name="CheckBox6" type="CheckBox" parent="MarginContainer/MarginContainer/HBoxContainer/Traits" unique_id=114832114]
+layout_mode = 2
+text = "保护倾向"
