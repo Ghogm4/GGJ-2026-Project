@@ -8,7 +8,7 @@ content_margin_left = 0.0
 content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
-bg_color = Color(0, 0, 0, 0.47058824)
+bg_color = Color(0, 0, 0, 0.88235295)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
@@ -57,13 +57,16 @@ size_flags_horizontal = 3
 theme = ExtResource("2_dhqq6")
 theme_override_constants/margin_left = 200
 theme_override_constants/margin_top = 109
+theme_override_constants/margin_right = 200
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer" unique_id=320156201]
 layout_mode = 2
+theme_override_constants/separation = 304
 
 [node name="Personas" type="GridContainer" parent="MarginContainer/MarginContainer/HBoxContainer" unique_id=1527753615]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 4
 theme_override_constants/h_separation = 237
 theme_override_constants/v_separation = 117
 columns = 2
@@ -111,6 +114,7 @@ label_settings = ExtResource("1_et623")
 [node name="Traits" type="VBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer" unique_id=1285857866]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 
 [node name="CheckBox" type="CheckBox" parent="MarginContainer/MarginContainer/HBoxContainer/Traits" unique_id=881289476]
 layout_mode = 2

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://brhfuc0bbn22j"]
+
+[ext_resource type="Script" uid="uid://6crm2i6fwwc6" path="res://Main/TestButton.cs" id="1_3w3w2"]
+
+[node name="TestConn" type="Control" unique_id=624309672]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="." unique_id=345445443]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3w3w2")

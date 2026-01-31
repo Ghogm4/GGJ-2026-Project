@@ -20,7 +20,7 @@ public partial class Customer : Resource
         }
     }
     public int Patience { get; set; } = 100;
-    public List<int> BornTraits { get; init; } = new();
+    public int[] BornTraits { get; init; } = [];
     public List<int> FinalTraits { get; private set; } = new();
     private static readonly SysHttpClient _httpClient = new();
     private List<Message> _messageHistory = new();
@@ -39,7 +39,7 @@ public partial class Customer : Resource
         }
     } = 0;
     private bool IsSatisfied => _triggeredTraitsBitMask == BornTraitsBitMask;
-    private string _age = "";
+    private int _ageGroup = 1;
     private string _sex = "";
     private string _story = "";
     private int _triggeredTraitsBitMask = 0;
@@ -50,15 +50,14 @@ public partial class Customer : Resource
     {
         int traitIndex = Mathf.Abs((int)GD.Randi() % Mask.PersonaTraits.Count);
         int[] traits = Mask.PersonaTraits[traitIndex];
-        string age = GetAge();
+        int ageGroup = GetAgeGroup();
         string sex = GetSex();
         return new Customer
         {
-            BornTraits = [.. traits],
-            FinalTraits = [.. traits],
-            _age = age,
+            BornTraits = traits,
+            _ageGroup = ageGroup,
             _sex = sex,
-            _story = await GetStoryAsync(age, sex).ConfigureAwait(false)
+            _story = await GetStoryAsync(ageGroup, sex).ConfigureAwait(false)
         };
     }
     public void WearMask(Mask mask)
@@ -99,7 +98,7 @@ public partial class Customer : Resource
                 messageHistory = _messageHistory.Select(m => m.Text).ToArray(),
                 finalTraits = FinalTraits.ToArray(),
                 story = _story,
-                age = _age,
+                ageGroup = _ageGroup,
                 sex = _sex,
                 patience = Patience
             };
@@ -117,30 +116,11 @@ public partial class Customer : Resource
             return null;
         }
     }
-    private static string GetAge()
-    {
-        return "";
-    }
+    private static int GetAgeGroup() => Mathf.Abs((int)GD.Randi()) % 3 + 1;
     private static string GetSex() => GD.Randf() < 0.5f ? "male" : "female";
-    private static string ExtractSingleStringFromJson(JsonDocument doc)
+    private static async Task<string> GetStoryAsync(int ageGroup, string sex)
     {
-        if (doc.RootElement.ValueKind == JsonValueKind.String)
-        {
-            return doc.RootElement.GetString();
-        }
-
-        foreach (var prop in doc.RootElement.EnumerateObject())
-        {
-            if (prop.Value.ValueKind == JsonValueKind.String)
-                return prop.Value.GetString();
-        }
-
-        GD.PushError("ExtractSingleStringFromJson: No string found in JSON.");
-        return null;
-    }
-    private static async Task<string> GetStoryAsync(string age, string sex)
-    {
-        var url = "https://www.test.com/v2";
+        const string url = "https://www.test.com/v2";
         const int maxRetries = 3;
 
         foreach (var attempt in Enumerable.Range(1, maxRetries))
@@ -149,8 +129,9 @@ public partial class Customer : Resource
             {
                 var payload = new
                 {
-                    age,
-                    sex
+                    ageGroup,
+                    sex,
+                    //traits = BornTraits
                 };
 
                 var json = JsonSerializer.Serialize(payload);
@@ -161,12 +142,11 @@ public partial class Customer : Resource
 
                 response.EnsureSuccessStatusCode();
 
-                using var doc = JsonDocument.Parse(respStr);
-                return ExtractSingleStringFromJson(doc);
+                return JsonDocument.Parse(respStr).RootElement.GetProperty("story").GetString();
             }
             catch (Exception ex)
             {
-                GD.PushError($"GetStory error attempt {attempt}: {ex.Message}");
+                GD.PushError($"GetBackground error attempt {attempt}: {ex.Message}");
                 if (attempt == maxRetries) break;
                 await Task.Delay(500).ConfigureAwait(false);
             }

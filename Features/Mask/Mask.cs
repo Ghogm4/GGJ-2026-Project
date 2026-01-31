@@ -9,7 +9,14 @@ public partial class Mask : Resource
 {
     public static readonly List<int[]> PersonaTraits = new()
     {
-        new int[] { 0, 1, 2 }
+        new int[] { 1, 2, 3 },
+        new int[] { 1, 2, 4 },
+        new int[] { 1, 3, 5 },
+        new int[] { 1, 4, 6 },
+        new int[] { 2, 5, 6 },
+        new int[] { 3, 4, 5 },
+        new int[] { 3, 4, 6 },
+        new int[] { 2, 3, 6 },
     };
     public Texture2D MaskTexture { get; set; } = null;
     public List<int> Traits { get; set; } = new();

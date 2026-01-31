@@ -10,10 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://g0mjj2mptaop" path="res://Assets/UI/InGameUI/SendButton.png" id="4_v48jm"]
 [ext_resource type="Texture2D" uid="uid://n6tx8luh4yb5" path="res://Assets/Mask/RabbitMask.png" id="4_ygop3"]
 [ext_resource type="Texture2D" uid="uid://do1ryqic4t5mi" path="res://Assets/UI/InGameUI/MoreButton.png" id="6_2cs6o"]
-[ext_resource type="Script" uid="uid://bb2ther7p7tea" path="res://UI/InGameUI/MaskButton.cs" id="6_q1b6k"]
+[ext_resource type="Script" uid="uid://bb2ther7p7tea" path="res://UI/InGameUI/MaskAndItem/MaskButton.cs" id="6_q1b6k"]
 [ext_resource type="Theme" uid="uid://c8ah2mfakt2b2" path="res://UI/InGameUI/MaskAndItem/MaskAndItemButtonTheme.tres" id="6_sk1xu"]
 [ext_resource type="Script" uid="uid://dlswx7yfwfhgt" path="res://UI/InGameUI/MoreButton.cs" id="7_7h060"]
-[ext_resource type="Script" uid="uid://db0wk0be006rr" path="res://UI/InGameUI/ItemButton.cs" id="7_sk1xu"]
+[ext_resource type="Script" uid="uid://db0wk0be006rr" path="res://UI/InGameUI/MaskAndItem/ItemButton.cs" id="7_sk1xu"]
 [ext_resource type="PackedScene" uid="uid://bcbtyli4psq28" path="res://UI/InGameUI/DialogueBox/DialogueHistoryMessageBox.tscn" id="7_tjskt"]
 [ext_resource type="Texture2D" uid="uid://dj4toamjej146" path="res://Assets/UI/InGameUI/PersonaBookButton.png" id="8_rbjxt"]
 [ext_resource type="Script" uid="uid://cvlqefwfsedoc" path="res://UI/InGameUI/DialogueBox/SendButton.cs" id="8_tjskt"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://jhjffaxhrg37" path="res://Assets/UI/InGameUI/ShopButton.png" id="10_fvl40"]
 [ext_resource type="Texture2D" uid="uid://b22dyexsvdnec" path="res://Assets/UI/InGameUI/Coin.png" id="21_1fx02"]
 [ext_resource type="Texture2D" uid="uid://270qisvx6ogh" path="res://Assets/UI/InGameUI/Heart.png" id="22_naom4"]
+[ext_resource type="PackedScene" uid="uid://c0googbqlilwr" path="res://UI/InGameUI/PersonaBook/PersonaBook.tscn" id="23_naom4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_afdwc"]
 corner_radius_top_left = 66
@@ -457,20 +458,25 @@ theme_override_constants/margin_right = 200
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme_override_constants/separation = 100
+theme_override_constants/separation = 429
 
 [node name="Coin" type="TextureRect" parent="Control/Stats/HBoxContainer" unique_id=2049137974]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 3
 size_flags_vertical = 0
 texture = ExtResource("21_1fx02")
+stretch_mode = 5
 
 [node name="Health" type="TextureRect" parent="Control/Stats/HBoxContainer" unique_id=2125605545]
 custom_minimum_size = Vector2(76, 0)
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 3
 size_flags_vertical = 4
 texture = ExtResource("22_naom4")
 stretch_mode = 1
+
+[node name="PersonaBook" parent="Control" unique_id=699838980 instance=ExtResource("23_naom4")]
+visible = false
+layout_mode = 1
 
 [editable path="Control/DialogueHistory/DialogueHistoryContainer/ScrollContainer/MarginContainer/DialogueHistoryMessages/DialogueHistoryMessageBox2"]
