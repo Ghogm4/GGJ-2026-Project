@@ -1,19 +1,91 @@
 [gd_scene format=3 uid="uid://c0googbqlilwr"]
 
 [ext_resource type="LabelSettings" uid="uid://o5w240jnlqfq" path="res://UI/InGameUI/PersonaBook/PersonaBookLabelSettings.tres" id="1_et623"]
+[ext_resource type="Texture2D" uid="uid://dgjtmtphucq8r" path="res://Assets/UI/InGameUI/PersonaBookBG.png" id="1_twy0q"]
 [ext_resource type="Theme" uid="uid://dvp7jvuergufq" path="res://UI/InGameUI/PersonaBook/PersonaBookContentTheme.tres" id="2_dhqq6"]
+[ext_resource type="Texture2D" uid="uid://dlf07yciv6fm5" path="res://Assets/UI/InGameUI/PersonaBook.png" id="2_pnb65"]
+[ext_resource type="Texture2D" uid="uid://do12dwuftavr2" path="res://Assets/Mask/CatMask.png" id="3_7a37s"]
+[ext_resource type="Texture2D" uid="uid://n6tx8luh4yb5" path="res://Assets/Mask/RabbitMask.png" id="3_e7b3q"]
+[ext_resource type="Texture2D" uid="uid://3htuhlfre612" path="res://Assets/Mask/FoxMask.png" id="5_twy0q"]
+[ext_resource type="Script" uid="uid://ht3u1l6bf08m" path="res://UI/InGameUI/PersonaBook/BookMaskButton.cs" id="6_ctst1"]
+[ext_resource type="Texture2D" uid="uid://lhe2ed70m00p" path="res://Assets/Mask/PigMask.png" id="7_pnb65"]
+[ext_resource type="Texture2D" uid="uid://dndhof233vm7m" path="res://Assets/Mask/BearMask.png" id="8_ctst1"]
+[ext_resource type="Texture2D" uid="uid://bdemkbloewjsc" path="res://Assets/Mask/SheepMask.png" id="9_b2h6q"]
+[ext_resource type="Texture2D" uid="uid://cfpmgvre4rk2" path="res://Assets/Mask/DogMask.png" id="10_uh8dt"]
+[ext_resource type="Texture2D" uid="uid://biy6elpgoejua" path="res://Assets/Mask/TigerMask.png" id="11_vut3s"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sprit"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n1gie"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ysk4o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vyoxk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5rcha"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pq7id"]
+
+[sub_resource type="Theme" id="Theme_aw8pj"]
+Button/styles/disabled = SubResource("StyleBoxEmpty_n1gie")
+Button/styles/focus = SubResource("StyleBoxEmpty_ysk4o")
+Button/styles/hover = SubResource("StyleBoxEmpty_vyoxk")
+Button/styles/normal = SubResource("StyleBoxEmpty_5rcha")
+Button/styles/pressed = SubResource("StyleBoxEmpty_pq7id")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbip3"]
+resource_local_to_scene = true
+atlas = ExtResource("3_e7b3q")
+region = Rect2(221.03113, 55.035706, 340.74377, 322.06732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr62s"]
+resource_local_to_scene = true
+atlas = ExtResource("5_twy0q")
+region = Rect2(221.03113, 55.035706, 340.74377, 322.06732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mk86e"]
+resource_local_to_scene = true
+atlas = ExtResource("3_7a37s")
+region = Rect2(221.03113, 55.035706, 340.74377, 322.06732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5dfc"]
+resource_local_to_scene = true
+atlas = ExtResource("7_pnb65")
+region = Rect2(221.03113, 55.035706, 340.74377, 322.06732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0k5i3"]
+resource_local_to_scene = true
+atlas = ExtResource("8_ctst1")
+region = Rect2(221.03113, 55.035706, 340.74377, 322.06732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsgsm"]
+resource_local_to_scene = true
+atlas = ExtResource("9_b2h6q")
+region = Rect2(221.03113, 55.035706, 340.74377, 322.06732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dql4c"]
+resource_local_to_scene = true
+atlas = ExtResource("10_uh8dt")
+region = Rect2(221.03113, 55.035706, 340.74377, 322.06732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfusw"]
+resource_local_to_scene = true
+atlas = ExtResource("11_vut3s")
+region = Rect2(221.03113, 55.035706, 340.74377, 322.06732)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twy0q"]
 content_margin_left = 0.0
 content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
-bg_color = Color(0, 0, 0, 0.88235295)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+bg_color = Color(0, 0, 0, 0.23529412)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 corner_detail = 5
+expand_margin_left = 15.0
+expand_margin_top = 10.0
+expand_margin_right = 5.0
+expand_margin_bottom = 10.0
 
 [node name="PersonaBook" type="Control" unique_id=699838980]
 layout_mode = 3
@@ -23,14 +95,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="DarkBG" type="Panel" parent="." unique_id=753415845]
+[node name="PersonaBookBG" type="TextureRect" parent="." unique_id=110999370]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_sprit")
+texture = ExtResource("1_twy0q")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=969344758]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = -124
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = -61
+
+[node name="Book" type="TextureRect" parent="MarginContainer2" unique_id=1254212618]
+layout_mode = 2
+texture = ExtResource("2_pnb65")
+expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=152380815]
 layout_mode = 1
@@ -55,9 +146,10 @@ label_settings = ExtResource("1_et623")
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_dhqq6")
-theme_override_constants/margin_left = 200
-theme_override_constants/margin_top = 109
+theme_override_constants/margin_left = 336
+theme_override_constants/margin_top = 203
 theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 58
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer" unique_id=320156201]
 layout_mode = 2
@@ -67,49 +159,383 @@ theme_override_constants/separation = 304
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
-theme_override_constants/h_separation = 237
-theme_override_constants/v_separation = 117
+theme = SubResource("Theme_aw8pj")
+theme_override_constants/h_separation = 332
+theme_override_constants/v_separation = 189
 columns = 2
 
-[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=1426005695]
+[node name="Control" type="Control" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=382454633]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control" unique_id=999164200]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.55, 0.55)
+texture = SubResource("AtlasTexture_dbip3")
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control" unique_id=1426005695]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.205
+offset_top = 7.17
+offset_right = 29.794998
+offset_bottom = 76.17
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "谈判家"
 label_settings = ExtResource("1_et623")
 
-[node name="Label2" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=643912139]
+[node name="Button1" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control" unique_id=1970839022 node_paths=PackedStringArray("MaskDescription", "Description")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -154.35
+offset_top = -138.765
+offset_right = -14.350006
+offset_bottom = 1.2350006
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_ctst1")
+MaskDescription = NodePath("../../../../../../MaskDescription")
+Description = NodePath("../../../../../../MaskDescription/Description")
+
+[node name="Control2" type="Control" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=351739605]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control2" unique_id=589724429]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -161.0
+offset_right = 170.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_yr62s")
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control2" unique_id=1722076142]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -119.535
+offset_top = 7.17
+offset_right = 30.464996
+offset_bottom = 76.17
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 text = "投机者"
 label_settings = ExtResource("1_et623")
 
-[node name="Label3" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=222527462]
+[node name="Button2" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control2" unique_id=543990833 node_paths=PackedStringArray("MaskDescription", "Description")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -154.35
+offset_top = -138.765
+offset_right = -14.350006
+offset_bottom = 1.2350006
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_ctst1")
+MaskDescription = NodePath("../../../../../../MaskDescription")
+Description = NodePath("../../../../../../MaskDescription/Description")
+
+[node name="Control3" type="Control" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=1728684853]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control3" unique_id=399311450]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -161.0
+offset_right = 170.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_mk86e")
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control3" unique_id=1418579722]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.205
+offset_top = 7.17
+offset_right = 29.794998
+offset_bottom = 76.17
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 text = "独行客"
 label_settings = ExtResource("1_et623")
 
-[node name="Label4" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=89469428]
+[node name="Button3" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control3" unique_id=595001982 node_paths=PackedStringArray("MaskDescription", "Description")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -154.35
+offset_top = -138.765
+offset_right = -14.350006
+offset_bottom = 1.2350006
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_ctst1")
+MaskDescription = NodePath("../../../../../../MaskDescription")
+Description = NodePath("../../../../../../MaskDescription/Description")
+
+[node name="Control4" type="Control" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=1306678084]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control4" unique_id=541689139]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -161.0
+offset_right = 170.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_q5dfc")
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control4" unique_id=26424744]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -119.535
+offset_top = 7.17
+offset_right = 30.464996
+offset_bottom = 76.17
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 text = "操控者"
 label_settings = ExtResource("1_et623")
 
-[node name="Label5" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=1255191846]
+[node name="Button4" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control4" unique_id=568405874 node_paths=PackedStringArray("MaskDescription", "Description")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -154.35
+offset_top = -138.765
+offset_right = -14.350006
+offset_bottom = 1.2350006
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_ctst1")
+MaskDescription = NodePath("../../../../../../MaskDescription")
+Description = NodePath("../../../../../../MaskDescription/Description")
+
+[node name="Control5" type="Control" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=1117426343]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control5" unique_id=519453829]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -161.0
+offset_right = 170.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_0k5i3")
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control5" unique_id=362426097]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.205
+offset_top = 7.17
+offset_right = 29.794998
+offset_bottom = 76.17
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 text = "守序者"
 label_settings = ExtResource("1_et623")
 
-[node name="Label6" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=1049183641]
+[node name="Button5" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control5" unique_id=1492144021 node_paths=PackedStringArray("MaskDescription", "Description")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -154.35
+offset_top = -138.765
+offset_right = -14.350006
+offset_bottom = 1.2350006
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_ctst1")
+MaskDescription = NodePath("../../../../../../MaskDescription")
+Description = NodePath("../../../../../../MaskDescription/Description")
+
+[node name="Control6" type="Control" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=257084315]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control6" unique_id=65692985]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -161.0
+offset_right = 170.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_lsgsm")
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control6" unique_id=1892207437]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -119.535
+offset_top = 7.17
+offset_right = 30.464996
+offset_bottom = 76.17
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 text = "内耗者"
 label_settings = ExtResource("1_et623")
 
-[node name="Label7" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=654673916]
+[node name="Button6" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control6" unique_id=1531428932 node_paths=PackedStringArray("MaskDescription", "Description")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -154.35
+offset_top = -138.765
+offset_right = -14.350006
+offset_bottom = 1.2350006
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_ctst1")
+MaskDescription = NodePath("../../../../../../MaskDescription")
+Description = NodePath("../../../../../../MaskDescription/Description")
+
+[node name="Control7" type="Control" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=1176510717]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control7" unique_id=1772726208]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -161.0
+offset_right = 170.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_dql4c")
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control7" unique_id=2008089371]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.205
+offset_top = 7.17
+offset_right = 29.794998
+offset_bottom = 76.17
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 text = "共鸣者"
 label_settings = ExtResource("1_et623")
 
-[node name="Label8" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=1914031774]
+[node name="Button7" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control7" unique_id=1992849942 node_paths=PackedStringArray("MaskDescription", "Description")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -154.35
+offset_top = -138.765
+offset_right = -14.350006
+offset_bottom = 1.2350006
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_ctst1")
+MaskDescription = NodePath("../../../../../../MaskDescription")
+Description = NodePath("../../../../../../MaskDescription/Description")
+
+[node name="Control8" type="Control" parent="MarginContainer/MarginContainer/HBoxContainer/Personas" unique_id=426919265]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control8" unique_id=1278765520]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -161.0
+offset_right = 170.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_bfusw")
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control8" unique_id=1252164835]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -119.535
+offset_top = 7.17
+offset_right = 30.464996
+offset_bottom = 76.17
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 text = "执法者"
 label_settings = ExtResource("1_et623")
+
+[node name="Button8" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer/Personas/Control8" unique_id=1933277296 node_paths=PackedStringArray("MaskDescription", "Description")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -154.35
+offset_top = -138.765
+offset_right = -14.350006
+offset_bottom = 1.2350006
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_ctst1")
+MaskDescription = NodePath("../../../../../../MaskDescription")
+Description = NodePath("../../../../../../MaskDescription/Description")
 
 [node name="Traits" type="VBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer" unique_id=1285857866]
 layout_mode = 2
@@ -139,3 +565,32 @@ text = "排斥合作"
 [node name="CheckBox6" type="CheckBox" parent="MarginContainer/MarginContainer/HBoxContainer/Traits" unique_id=114832114]
 layout_mode = 2
 text = "保护倾向"
+
+[node name="MaskDescription" type="Control" parent="." unique_id=1078165707]
+anchors_preset = 0
+offset_right = 469.0
+offset_bottom = 118.0
+
+[node name="Description" type="Label" parent="MaskDescription" unique_id=1487931674]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 469.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 25
+text = " 善于在规则与情感间权衡利益，精于算计的沟通者。
+通常表现出利益导向、规则意识、共情表达"
+autowrap_mode = 3
+
+[node name="ColorRect" type="Panel" parent="MaskDescription/Description" unique_id=1126621804]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_twy0q")
