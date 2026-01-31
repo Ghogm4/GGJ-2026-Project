@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="GGJ 2026 Project"
-config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/features=PackedStringArray("4.6", "C#", "Forward Plus")
+config/icon="res://Assets/icon.svg"
 
 [display]
 
